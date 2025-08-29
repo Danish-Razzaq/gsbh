@@ -3,6 +3,9 @@ import HeroSection from "./HeroSection";
 import Slider from "./slider/page";
 import DarkVeil from "./Components/DarkVeil/DarkVeil";
 import MobileScreenPage from "./Components/MobileScreenPage.jsx";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import PricingPage from "./PricingPage.jsx";
+import Header from "./common/header.jsx";
 
 const App = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -21,7 +24,15 @@ const App = () => {
     };
   }, []);
 
-  return <>{isMobile ? <MobileScreenPage /> : <HeroSection />}</>;
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={isMobile ? <MobileScreenPage /> : <HeroSection />} />
+      <Route path="/pricing" element={<PricingPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

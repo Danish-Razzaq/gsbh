@@ -11,6 +11,7 @@ import ScrollStack, {
 } from "./Components/ScrollStack/ScrollStack";
 import DarkVeilLocal from "./Components/DarkVeil/DarkVeil";
 import SpotlightCard from "./Components/SpotlightCard/SpotlightCard";
+import PricingPage from "./PricingPage";
 /**
  * ErpPitchDeck — final stable single-file implementation
  * - No external reactbits imports or dynamic CDN fetches (avoids sandbox fetch errors)
@@ -80,6 +81,15 @@ const SLIDES = [
     placeholder: "[Screenshot placeholder — Member Onboarding]",
     img: "/images/pilot.png",
   },
+
+  {
+    id: "pricing",
+    title: "Pricing Plans",
+    subtitle:
+      "GSBH members will enjoy exclusive pricing when the platform launches.",
+    // placeholder: "[Screenshot placeholder — Member Pricing Tiers]",
+    // img: "/images/Commercial.jpg",
+  },
 ];
 
 const FEATURES = [
@@ -124,7 +134,7 @@ const FEATURES = [
     association:
       "Exclusive anonymized benchmarks from GSBH help you measure against peers.",
     placeholder: "[Screenshot: Dashboards & Benchmarks]",
-    img: "/images/Reports&Insights.png",
+    img: "/images/Reports&Insights.jpg",
   },
 ];
 
@@ -331,19 +341,6 @@ export default function ErpPitchDeck() {
           zIndex: 10,
         }}
       >
-        {/*  Show logo top left side  */}
-        <div
-          className=" mx-auto  pt-3"
-          style={{
-            maxWidth: 1200,
-            width: "100%",
-            display: "grid",
-            alignItems: "center",
-          }}
-        >
-          <img src="images/logo.png" alt="Logo" className="h-16" />
-        </div>
-
         {SLIDES.map((s, idx) => (
           <section
             key={s.id}
@@ -426,11 +423,13 @@ export default function ErpPitchDeck() {
                         // overflow: "hidden"
                       }
                     }
-                    className="lg:w-[210%]  w-full"
+                    className="lg:w-[195%]  w-full"
                   >
                     <ScrollStackLocal items={FEATURES} />
                   </div>
                 )}
+
+                {s.id === "pricing" && <div className="lg:w-[195%] w-full"><PricingPage /></div>}
 
                 {s.id === "commercials" && (
                   <div
