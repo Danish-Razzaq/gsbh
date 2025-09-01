@@ -26,14 +26,14 @@ export default function PricingPage() {
   const plans = [
     {
       name: "Monthly Plan",
-      price: "$40",
+      price: "$50",
       duration: "per member / month",
       features: ["Full Access", "24/7 Support", "Cancel Anytime"],
       popular: false,
     },
     {
       name: "Yearly Plan",
-      price: "$400",
+      price: "$500",
       duration: "per member / year",
       note: "Save 2 months",
       features: [
@@ -62,8 +62,8 @@ export default function PricingPage() {
           height: "400px",
           background:
             // "radial-gradient(circle, rgba(48, 207, 206, 0.3) 0%, rgba(48, 207, 206, 0.1) 30%, transparent 70%)",
-           // red color bg i want to shor in rgb
-           "radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0.1) 30%, transparent 70%)",
+            // red color bg i want to shor in rgb
+            "radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0.1) 30%, transparent 70%)",
           filter: "blur(20px)",
         }}
       />
